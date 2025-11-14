@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --vyom-charcoal: #0b0f12;
+    --vyom-gray: #1f2937;
+    --vyom-orange: #ff7b00;
+}
+
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+
+body {
+    @apply bg-vyomCharcoal text-white font-poppins;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Smooth scrolling for anchors */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Utility for subtle glass card */
+.card-glass {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+}
