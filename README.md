@@ -82,7 +82,7 @@ npm run dev
 
 ## 🌐 Deployment Notes (Optional)
 
-_Deployed to [Your Demo URL]_  
+Deployed to https://hs024.github.io/Vyomgarud_landing_page/
 
 
 ---
