@@ -80,7 +80,7 @@ npm run dev
 
 ---
 
-## 🌐 Deployment Notes (Optional)
+## 🌐 Deployment Notes 
 
 Deployed to https://vyomgarud-landing-page-three.vercel.app/
 
@@ -89,4 +89,4 @@ Deployed to https://vyomgarud-landing-page-three.vercel.app/
 
 
 ## design by
-- himanshu
+- Himanshu Sharma
