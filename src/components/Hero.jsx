@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
   const drone_imgs = [
+    "./herodrone.mp4",
     "./drone1.jpg",
-    "./drone2.png",
-    "./drone3.jpg",
+    "./drone6.jpg",
+    "./drone7.webp",
+    "./herodrone2.mp4",
     "./drone4.jpg",
   ];
 
@@ -17,9 +19,10 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % drone_imgs.length);
-    }, 2800);
+    }, 4000); 
     return () => clearInterval(timer);
   }, []);
+
 
   return (
     <section
@@ -33,7 +36,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
       />
 
       {/* DARK OVERLAY */}
@@ -86,23 +89,37 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
-          className="flex-1 relative w-full h-[360px] md:h-[360px] "
+          className="flex-1 relative w-full"
         >
-          <AnimatePresence>
-            <motion.img
-              key={drone_imgs[index]}
-              src={drone_imgs[index]}
-              alt="Drone"
-              initial={{ opacity: 0, y: 20, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.96 }}
-              transition={{ duration: 0.7 }}
-              className="absolute inset-0 w-full h-full object-contain bg-white/10 rounded-2xl border border-white/30 shadow-[0_20px_50px_rgba(0,0,0,0.4)] p-1"
-              style={{
-                filter: "drop-shadow(0 25px 50px rgba(0,0,0,0.5))",
-              }}
-            />
-          </AnimatePresence>
+          <div className="relative w-full aspect-[16/9] rounded-2xl border border-white/30 overflow-hidden bg-black/20 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+            <AnimatePresence mode="wait">
+              {drone_imgs[index].endsWith(".mp4") ? (
+                <motion.video
+                  key={drone_imgs[index]}
+                  src={drone_imgs[index]}
+                  autoPlay
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.6 }}
+                />
+              ) : (
+                <motion.img
+                  key={drone_imgs[index]}
+                  src={drone_imgs[index]}
+                  alt="Drone"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.6 }}
+                />
+              )}
+            </AnimatePresence>
+          </div>
         </motion.div>
       </div>
     </section>

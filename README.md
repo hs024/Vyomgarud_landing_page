@@ -51,7 +51,7 @@ VyomGarud builds military-grade UAV/drone systems with a focus on reliability, p
 
 ### Setup
 ```
-git clone [YOUR_REPO_LINK_HERE]
+git clone https://github.com/hs024/Vyomgarud_landing_page
 cd vyomgarud_landing_page
 npm install
 npm run dev
@@ -62,6 +62,10 @@ npm run dev
 
 
 ![Hero Section](public/screenshots/hero.png)
+
+![About Section](public/screenshots/about.png)
+
+![highlight Section](public/screenshots/image.png)
 
 
 ---
