@@ -82,7 +82,7 @@ npm run dev
 
 ## 🌐 Deployment Notes (Optional)
 
-Deployed to https://hs024.github.io/Vyomgarud_landing_page/
+Deployed to https://vyomgarud-landing-page-three.vercel.app/
 
 
 ---
